@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+.font-kumb {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+
+/**BTN blue**/
+.btn {
+    @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+@apply bg-blue-500 text-white hover:bg-blue-700;
+}
+
+.btn-red {
+    @apply bg-red-500 text-white hover:bg-red-700;
+}
+
+.btn-yellow {
+    @apply bg-yellow-400 text-gray-900 hover:bg-yellow-500;
+}
+
+.btn-green {
+    @apply bg-green-500 text-white hover:bg-green-700;
+}
+
+.btn-purple {
+    @apply bg-purple-800 text-white hover:bg-violet-400;
+}
+
+.card{
+    @apply bg-white rounded-lg shadow-lg p-6;
+}
+
+.embed-responsive{
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.embed-responsive iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.admin-icon-style{
+    color: #6366f1;
+}
+.admin-icon-style:hover{
+    color: #3b82f680;
+}
+
+/**modal cart**/
+.modal-component{
+    height: 100vh;
+}
+
+.wp-block-preformatted, .wp-block-code{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow: auto;
+    font-size: 12px;
+}
+
+pre{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow: auto;
+    font-size: 12px;
+}
+
+.form-control{
+    @apply border-solid border-2 border-gray-300 hover:border-indigo-500 rounded-md shadow-sm px-2 py-3;
+}

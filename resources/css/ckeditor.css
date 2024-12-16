@@ -1,0 +1,57 @@
+.ckeditor ul{
+    @apply list-disc list-inside;
+}
+
+.ckeditor ol{
+    @apply list-decimal list-inside;
+}
+
+.ckeditor a{
+    @apply text-blue-600 visited:text-purple-600 underline;
+}
+
+.ckeditor h2{
+    @apply text-2xl font-semibold;
+}
+
+.ckeditor h3{
+    @apply text-xl font-semibold;
+}
+
+.ckeditor h4{
+    @apply text-lg font-semibold;
+}
+
+.ckeditor strong{
+    @apply font-bold;
+}
+
+.ckeditor ul:not(:last-child),
+.ckeditor ol:not(:last-child),
+.ckeditor p:not(:last-child),
+.ckeditor h2:not(:last-child),
+.ckeditor pre{
+  @apply mb-4;
+}
+
+.ckeditor h3:not(:last-child),
+.ckeditor h4:not(:last-child){
+    @apply mb-3;
+}
+
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable){
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.ck.ck-editor__editable_inline ul{
+    padding-left: 20px;
+}
+
+.front-ckeditor a{
+    text-decoration: underline;
+    color: blueviolet;
+}
+.front-ckeditor a:hover{
+    color: rgb(167, 100, 229);
+}
+  
