@@ -29,9 +29,9 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
 
-        // Tag::factory(8)->create();
-        // PostCategory::factory(4)->create(); 
-        // $this->call(PostSeeder::class);
+        Tag::factory(8)->create();
+        PostCategory::factory(4)->create(); 
+        $this->call(PostSeeder::class);
 
         $this->call([
             CategorySeeder::class,
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             PriceSeeder::class
         ]);
 
-        //$this->call(CourseSeeder::class);
+        $this->call(CourseSeeder::class);
 
     }
 }

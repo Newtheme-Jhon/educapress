@@ -17,59 +17,63 @@
                 @foreach ($courses as $course)
 
                     {{-- @dump($course->image) --}}
-                    <div class="swiper-slide h-[400px]">
-                        <a href="{{route('courses.show', $course)}}">
-                            <figure>
-                                {{-- <img src="{{Storage::url($course->image_path)}}" alt=""> --}}
-                                <img src="{{asset('img/03.jpg')}}" alt="">
-                            </figure>
-                        </a>
-                        <div class="card-description">
-                            <div class="card-title">
-                                <p class="font-semibold">
-                                    Titulo:
-                                </p>
-                                <h4 class="text-gray-700 hover:text-blue-500">
-                                    <a href="{{route('courses.show', $course)}}">
-                                        {{substr($course->title, 0, 40)}}...
-                                    </a>
-                                </h4>
+                    @if ($course->status == 3) 
+                        <div class="swiper-slide h-[400px]">
+    
+                            <a href="{{route('courses.show', $course)}}">
+                                <figure>
+                                    <img src="{{Storage::url($course->image_path)}}" alt="">
+                                    {{-- <img src="{{asset('img/03.jpg')}}" alt=""> --}}
+                                </figure>
+                            </a>
+                            <div class="card-description">
+                                <div class="card-title">
+                                    <p class="font-semibold">
+                                        Titulo:
+                                    </p>
+                                    <h4 class="text-gray-700 hover:text-blue-500">
+                                        <a href="{{route('courses.show', $course)}}">
+                                            {{substr($course->title, 0, 40)}}...
+                                        </a>
+                                    </h4>
 
-                                <ul class="flex text-xs space-x-1 mt-1">
+                                    <ul class="flex text-xs space-x-1 mt-1">
 
-                                    @php
-                                        //reviews
-                                        if($course->reviews->count()){
-                                            $reviews = $course->reviews->pluck('rating');
-                                            $totalReviews = $course->reviews->count();
-                                            $promedioReviews = $reviews->sum() / $totalReviews;
-                                            $total = $totalReviews <= 0 ? 5 : round($promedioReviews);
-                                        }else{
-                                            $total = 5;
-                                        }
+                                        @php
+                                            //reviews
+                                            if($course->reviews->count()){
+                                                $reviews = $course->reviews->pluck('rating');
+                                                $totalReviews = $course->reviews->count();
+                                                $promedioReviews = $reviews->sum() / $totalReviews;
+                                                $total = $totalReviews <= 0 ? 5 : round($promedioReviews);
+                                            }else{
+                                                $total = 5;
+                                            }
 
-                                    @endphp
+                                        @endphp
 
-                                    @for ($i = 0; $i < $total; $i++)
-                                        <li>
-                                            <i class="fa-solid fa-star text-indigo-500"></i>
-                                        </li>
-                                    @endfor
-                                </ul>
-                                  
+                                        @for ($i = 0; $i < $total; $i++)
+                                            <li>
+                                                <i class="fa-solid fa-star text-indigo-500"></i>
+                                            </li>
+                                        @endfor
+                                    </ul>
+                                    
+                                </div>
+                                <div class="card-text">
+                                    <p>
+                                        <span class="font-semibold">Duración: </span>
+                                        <span class="text-gray-700">{{$courseTime[$course->id]}}</span>
+                                    </p>
+                                </div>
+                                <div class="card-link mt-4">
+                                    <a href="{{route('courses.show', $course)}}">Ver más</a>
+                                </div>
                             </div>
-                            <div class="card-text">
-                                <p>
-                                    <span class="font-semibold">Duración: </span>
-                                    <span class="text-gray-700">{{$courseTime[$course->id]}}</span>
-                                </p>
-                            </div>
-                            <div class="card-link mt-4">
-                                <a href="{{route('courses.show', $course)}}">Ver más</a>
-                            </div>
+
                         </div>
-
-                    </div>
+                    @endif
+                    
                 @endforeach
 
             </div>
