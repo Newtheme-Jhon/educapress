@@ -17,6 +17,7 @@
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "plesk/ext-laravel-integration": "*",
         "league/flysystem-aws-s3-v3": "^3.29",
         "livewire/livewire": "^3.0",
         "pbmedia/laravel-ffmpeg": "^8.5",
