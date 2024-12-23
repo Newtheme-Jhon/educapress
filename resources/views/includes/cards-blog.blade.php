@@ -9,20 +9,24 @@
 
         @foreach ($posts as $post)
         
-        <div class="border border-slate-300 rounded-2xl">
-            <a href="{{route('posts.show', $post)}}">
-                <div class="bg-cover h-52 mb-1 rounded-t-lg" style="background-image: url({{Storage::url($post->image_path)}});"></div>
-                <div class="p-3">
-                    <h3 class="text-2xl mb-2">
-                        {{substr($post->title, 0, 40)}}...
-                    </h3>
-                    <p>
-                        {{$post->created_at->format('d/m/Y')}}
-                    </p>
-                    
+            @if ($post->status->value == 2)
+                
+                <div class="border border-slate-300 rounded-2xl">
+                    <a href="{{route('posts.show', $post)}}">
+                        <div class="bg-cover h-52 mb-1 rounded-t-lg" style="background-image: url({{Storage::url($post->image_path)}});"></div>
+                        <div class="p-3">
+                            <h3 class="text-2xl mb-2">
+                                {{substr($post->title, 0, 40)}}...
+                            </h3>
+                            <p>
+                                {{$post->created_at->format('d/m/Y')}}
+                            </p>
+                            
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
+                
+            @endif
 
         @endforeach
 

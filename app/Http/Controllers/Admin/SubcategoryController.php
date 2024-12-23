@@ -40,9 +40,9 @@ class SubcategoryController extends Controller
             'category_id'   => 'required|exists:categories,id',
         ]);
 
-        $subcategory = Subcategory::create($data);
+        Subcategory::create($data);
 
-        return redirect()->route('admin.subcategories.edit', $subcategory)->with('success', 'Subcategoria creada correctamente.');
+        return redirect()->route('admin.subcategories.index')->with('success', 'Subcategoria creada correctamente.');
     }
 
     /**

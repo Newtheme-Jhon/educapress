@@ -17,7 +17,7 @@ class PostPolicy
 
     public function author(User $user, $post): Response
     {
-        return $user->id === $post->user_id ? 
+        return $user->id === $post->user_id || $user->hasRole('admin') ? 
         Response::allow() : Response::deny('No estas autorizado para editar este post');
     }
 
